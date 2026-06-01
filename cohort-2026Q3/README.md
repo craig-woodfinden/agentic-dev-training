@@ -1,32 +1,17 @@
 # Cohort 2026 Q3
 
-Active cohort: the whole engineering team (six engineers, one mixed cohort).
+Active cohort: the whole engineering team (six engineers).
 
-## Weekly session
+The program is self-paced. Each engineer works through their level's modules on their own time and books 15-minute check-ins with the engineer lead. See [`engineer-lead-playbook.md`](./engineer-lead-playbook.md) for the lead's operating manual.
 
-- **When:** *fill in — e.g. Thursdays, 10:00–11:30*
-- **Where:** *fill in — meeting room / video link*
-- **Slack channel:** `#agentic-dev-training`
-- **Standing technical advisor:** *fill in (your most senior engineer)*
+## Cohort setup
 
-## This week
+- **Engineer lead:** *fill in (your most senior engineer until someone else grows into it)*
+- **Standing technical advisor:** *fill in (may be the same person as the lead)*
+- **Cohort Slack channel:** `#agentic-dev-training`
+- **Optional all-hands cadence:** every 2 weeks / every 4 weeks / not yet — *pick one*
 
-- **Week:** *fill in*
-- **Session lead:** *rotates — fill in this week's name*
-- **Most engineers are on:** *e.g. L2.2 — Tool use*
-
-## The cohort
-
-| Engineer | Starting level | Current module | Capstone status |
-|---|---|---|---|
-| *name* | L1 / L2 / L3 | *e.g. L1.3* | *not started / in progress / demo'd* |
-| *name* | | | |
-| *name* | | | |
-| *name* | | | |
-| *name* | | | |
-| *name* | | | |
-
-## How to join the cohort
+## How to join
 
 ```bash
 # from the repo root
@@ -35,22 +20,51 @@ git add cohort-2026Q3/<your-name>
 git commit -m "Add <your-name> to 2026Q3 cohort"
 ```
 
-Then update the table above with your starting level (from `score_quiz.py`).
+Run `python score_quiz.py` to find your starting level, then update the table below.
 
-## Session lead rotation
+## The cohort
 
-The lead each week:
-- runs the 10-minute round-the-room at the start
-- keeps time across the 90 minutes
-- signs off any capstone demo that week
-- updates the "This week" section above for next week's lead
+| Engineer | Quiz score | Starting level | Current module | Last check-in | Capstone status |
+|---|---|---|---|---|---|
+| *name* | *e.g. 7/30* | L1 / L2 / L3 | *e.g. L1.3* | *YYYY-MM-DD* | *not started / in progress / signed off* |
+| *name* | | | | | |
+| *name* | | | | | |
+| *name* | | | | | |
+| *name* | | | | | |
+| *name* | | | | | |
 
-Six engineers, six weeks per rotation. Put yourself on the calendar.
+The engineer lead refreshes this table each Friday based on the week's check-ins.
+
+## How to book a check-in (engineers)
+
+1. Finish the module, including the self-check section.
+2. Slack-DM the engineer lead with: module code (e.g. `L2.2`), a one-line summary of what you built, and three suggested 15-minute slots in the next two days.
+3. Bring the artefacts the module's check-in section lists.
+4. Walk the lead through what you built for 5–7 minutes. They probe 2–3 questions and sign you off.
+
+If you haven't booked one in 10+ days, expect the lead to DM you.
+
+## Weekly cadence
+
+Every Friday the engineer lead posts a status update in `#agentic-dev-training`:
+
+```
+Cohort status — week of <date>
+
+L1: <names> currently on <module>
+L2: <names> currently on <module>
+L3: <names> currently on <module>
+
+Capstones this week: <names>
+Capstones due next: <names>
+
+If you haven't booked a check-in in 10+ days, ping me.
+```
 
 ## Past sessions log
 
-Brief notes — what we did, what worked, what didn't. Two sentences max per week.
+Notes from the optional all-hands sessions (if you run them). Two sentences max per session.
 
-- **Week 1 (date):** placement quiz, cohort kickoff. Everyone scored. Two at L1, three at L2, one at L3.
-- **Week 2 (date):** *fill in*
-- **Week 3 (date):** *fill in*
+- **Kickoff (date):** placement quiz, cohort kickoff. Everyone scored. Two at L1, three at L2, one at L3. (Example — replace with reality.)
+- **All-hands 1 (date):** *fill in*
+- **All-hands 2 (date):** *fill in*

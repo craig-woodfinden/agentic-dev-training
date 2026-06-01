@@ -2,13 +2,15 @@
 
 Your personal folder for this cohort. Everything you produce while working through the modules lives here.
 
-## Status
+## Files in this template
 
-- **Starting level:** *L1 / L2 / L3 (from `score_quiz.py`)*
-- **Current module:** *e.g. L1.2 — Prompting fundamentals*
-- **Quiz score:** *e.g. 7 / 30*
+- **`status.md`** — your check-in log. The engineer lead updates this when they sign off a module. The most important file in this folder.
+- `L1.1-notes.md` — example notes template (copy it for every module).
+- `L1.3-capstone-retro.md` — L1 capstone retro template (600 words).
+- `L2-capstone-readme.md` — L2 capstone README template.
+- `L3-capstone-runbook.md` — L3 capstone runbook template.
 
-## What goes in here
+## What else goes in here
 
 For each module you complete, drop in:
 
@@ -16,9 +18,9 @@ For each module you complete, drop in:
 - any artefacts the module asks you to save: prompts, eval CSVs, attack logs, dashboards
 - starter code you've adapted, if it's worth keeping
 
-Files prefilled in this template:
+## How to use this folder
 
-- `L1.1-notes.md` — a template you can copy for every module
-- `L1.3-capstone-retro.md` — the L1 capstone retro template (600 words)
-- `L2-capstone-readme.md` — the L2 capstone README template
-- `L3-capstone-runbook.md` — the L3 capstone rollback/runbook template
+1. After joining the cohort (`cp -r _template <your-name>`), open `status.md` and fill in your starting level, quiz score, and start date.
+2. As you work through each module, save your artefacts here and write a one-screen `LX.Y-notes.md`.
+3. Book a check-in with the engineer lead via Slack DM when you're ready.
+4. At the check-in, the lead signs you off in `status.md`. Commit and push.

@@ -2,7 +2,7 @@
 
 The training pathway for our engineering team — covering everything from your first deliberate use of an AI coding assistant through to shipping production agents with evals, observability, and rollback plans.
 
-Designed for a six-person team meeting for **90 minutes a week**, all together, no homework outside the session.
+**Self-paced.** Each engineer works through modules on their own time (~75 min/week), then books a **15-minute check-in** with the engineer lead. The lead signs off. They move on. ~90 min/week total, spread however suits you.
 
 ---
 
@@ -10,13 +10,13 @@ Designed for a six-person team meeting for **90 minutes a week**, all together, 
 
 1. **Take the placement quiz.** Run `python score_quiz.py` and answer 10 questions (~5 minutes). It tells you which level to start on. The quiz is also in [`placement-quiz.md`](./placement-quiz.md) if you'd rather read it.
 
-2. **Read the pathway.** Open [`pathway.md`](./pathway.md). It's the whole program in eight pages — quiz, the four levels, capstones, and how the weekly session runs.
+2. **Read the pathway.** Open [`pathway.md`](./pathway.md). It's the whole program — quiz, the four levels, capstones, and how the self-paced model works.
 
-3. **Each week, open that week's module.** Module files live in [`modules/`](./modules/). The current cohort's plan is in [`cohort-2026Q3/README.md`](./cohort-2026Q3/README.md).
+3. **Each week, open that week's module.** Module files live in [`modules/`](./modules/). Each is one page, runnable in ~75 minutes, with the starter code in [`starters/`](./starters/).
 
-4. **Use the starter code.** Every module has a matching folder in [`starters/`](./starters/) with runnable code, requirements, and templates. Pull the starter, modify it as the module asks, save your work in your personal cohort folder.
+4. **Run the self-check, then book a 15-minute check-in with the engineer lead** (Slack DM). The lead's playbook is in [`cohort-2026Q3/engineer-lead-playbook.md`](./cohort-2026Q3/engineer-lead-playbook.md).
 
-5. **Commit your work to your cohort folder.** Each engineer has a folder under `cohort-2026Q3/<your-name>/`. Notes, prompts, capstones — push them as you go.
+5. **Commit your work to your cohort folder.** Each engineer has a folder under `cohort-2026Q3/<your-name>/`. Notes, prompts, capstones, sign-off log — push them as you go.
 
 ---
 
@@ -31,12 +31,15 @@ Designed for a six-person team meeting for **90 minutes a week**, all together, 
 ├── requirements.txt         ← Python deps used across modules
 ├── modules/                 ← the 12 module session-in-a-box files
 ├── starters/                ← runnable starter code, one folder per module
-└── cohort-2026Q3/           ← active cohort: tracker + per-engineer folders
+└── cohort-2026Q3/           ← active cohort
+    ├── README.md            ← cohort tracker
+    ├── engineer-lead-playbook.md   ← the lead's operating manual
+    └── _template/           ← copy this to <your-name>/ to join
 ```
 
 ---
 
-## Quickstart
+## Quickstart for engineers
 
 ```bash
 git clone <this-repo>
@@ -56,9 +59,22 @@ python score_quiz.py
 # create your cohort folder
 cp -r cohort-2026Q3/_template cohort-2026Q3/<your-name>
 
-# read the pathway
-open pathway.md   # or `cat pathway.md`, or open in your editor
+# read the pathway and your level's first module
+open pathway.md
+open modules/L1.1-mental-model-of-llms.md   # whichever module you're starting on
 ```
+
+---
+
+## Quickstart for the engineer lead
+
+If you've been named the lead for this cohort, **read [`cohort-2026Q3/engineer-lead-playbook.md`](./cohort-2026Q3/engineer-lead-playbook.md) before the first check-in.** It covers:
+
+- The 15-minute check-in format and sign-off bar
+- How to run each level's capstone demo (15 min for L1, up to 60 min for L3)
+- The weekly cadence (~2.5–3 hrs/week)
+- What to do when an engineer goes quiet
+- When to call in external coaching
 
 ---
 
@@ -80,8 +96,8 @@ Full descriptions and exit criteria in [`pathway.md`](./pathway.md).
 Modules will evolve as we run cohorts. Changes go through PR, reviewed by the program owner.
 
 - **Program owner:** *fill in*
+- **Engineer lead (this cohort):** *fill in*
 - **Standing technical advisor (Level 4-ish):** *fill in*
-- **Cohort lead this week:** see [`cohort-2026Q3/README.md`](./cohort-2026Q3/README.md)
 
 ---
 

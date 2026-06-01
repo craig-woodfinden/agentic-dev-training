@@ -1,15 +1,16 @@
 # Agentic Development — Training Pathway
 
-Take the 5-minute quiz. Land on a level. 90 minutes a week, all six of you in the room. Move up by demoing real work.
+Take the 5-minute quiz. Land on a level. Work through one module a week at your own pace, then a 15-minute check-in with the engineer lead. Move up by demoing real work.
 
 ---
 
 ## How to use this document
 
 1. Take the placement quiz in [`placement-quiz.md`](./placement-quiz.md) (or run `python score_quiz.py`). It tells you which level to start on.
-2. Block 90 minutes on the team calendar every week. All six of you, same time, protected like an on-call shift.
-3. Work through your level's four modules in the session, one per week. No homework — the work happens in the room.
-4. Your capstone is real project work that uses the level's skills. Demo it to the team. Move up when the four exit criteria are met.
+2. Block ~75 minutes on your own calendar each week for module work. Plus a 15-minute check-in with the engineer lead. Total ~90 min/week — but spread however suits you.
+3. Work through your level's four modules at your own pace (one per week is the default). Each module is self-contained and runnable from the [`starters/`](./starters/) folder.
+4. After each module, run the self-check, book a 15-minute Slack DM with the lead, walk them through what you built. They sign you off.
+5. Your capstone is real project work that uses the level's skills. Demo it to the lead (and 1–2 others for L2/L3). Move up when the four exit criteria are met.
 
 ---
 
@@ -20,8 +21,8 @@ Take the 5-minute quiz. Land on a level. 90 minutes a week, all six of you in th
 | | |
 |---|---|
 | **You** | You've used AI tools casually but don't yet have a daily, deliberate workflow. You may not have called an LLM API directly. |
-| **Time** | One 90-minute session per week — protected on the team calendar. Four modules, one per session. No homework outside the session. |
-| **Pace** | A single mixed cohort — the whole engineering team in one room. ~5–6 weeks per level. |
+| **Time** | ~75 min of self-paced module work + 15-min check-in with the engineer lead = ~90 min/week. One module per week is the default. |
+| **Pace** | Self-paced. Roughly 5–6 weeks per level (4 modules + capstone). |
 
 ### The four modules
 
@@ -34,7 +35,7 @@ Take the 5-minute quiz. Land on a level. 90 minutes a week, all six of you in th
 
 Ship one real PR end-to-end using Claude Code. Small but real. Then write a 600-word retro about what you prompted, what went wrong, and what you corrected.
 
-- **You'll demo:** 10 minutes at the weekly cohort session. Show the PR, walk the cohort through the prompt log, share one thing you nearly missed.
+- **You'll demo:** 15–20 min, 1:1 with the engineer lead. Show the PR, walk them through the prompt log, share one thing you nearly missed.
 - **You'll hand in:** Merged PR + prompt log + 600-word retro.
 
 ### You're ready for the next level when…
@@ -53,8 +54,8 @@ Ship one real PR end-to-end using Claude Code. Small but real. Then write a 600-
 | | |
 |---|---|
 | **You** | You're a confident daily user of AI tools and have called the API at least once. You haven't yet shipped a feature in production that depends on an LLM. |
-| **Time** | One 90-minute session per week. |
-| **Pace** | ~5–6 weeks for the level. |
+| **Time** | ~75 min self-paced + 15-min check-in = ~90 min/week. |
+| **Pace** | Self-paced. ~5–6 weeks for the level (4 modules + capstone). |
 
 ### The four modules
 
@@ -67,7 +68,7 @@ Ship one real PR end-to-end using Claude Code. Small but real. Then write a 600-
 
 The next small internal tool your team needs — built with at least one custom tool/function call and a 10-case eval suite. The capstone is real work, not a side project. Ship it where teammates will actually use it (internal CLI, Slack bot, or skill).
 
-- **You'll demo:** Five-minute live demo to the team at your weekly session. Show the working tool, the eval pass rate, and your per-call cost estimate.
+- **You'll demo:** 30–45 min, with the engineer lead and 1–2 other cohort engineers. Show the working tool, the eval pass rate, and your per-call cost estimate.
 - **You'll hand in:** Working tool, eval CSV/JSONL, runner script, README with cost-per-call.
 
 ### You're ready for the next level when…
@@ -86,8 +87,8 @@ The next small internal tool your team needs — built with at least one custom 
 | | |
 |---|---|
 | **You** | You've shipped at least one LLM-backed feature, have working evals, and have hit at least one production surprise. Ready to take responsibility for an agentic system. |
-| **Time** | One 90-minute session per week. Deeper modules may span two sessions. |
-| **Pace** | ~6–8 weeks for the level. |
+| **Time** | ~75 min self-paced + 15-min check-in = ~90 min/week. Deeper modules may need two weeks. |
+| **Pace** | Self-paced. ~6–8 weeks for the level. |
 
 ### The four modules
 
@@ -100,7 +101,7 @@ The next small internal tool your team needs — built with at least one custom 
 
 Ship one agentic feature to production with: at least one tool call, evals running in CI, an observability dashboard, a documented failure-mode catalogue, and a written rollback plan. The feature must run live for at least four weeks before sign-off.
 
-- **You'll demo:** Engineering leadership review with at least one Expert in the room. Walk the dashboard, the eval CI, and the failure-mode doc.
+- **You'll demo:** 45–60 min, with the engineer lead and the standing technical advisor (and any interested cohort members). Walk the dashboard live, show CI evals, walk the failure-mode doc and rollback plan.
 - **You'll hand in:** Live feature + CI evals + dashboard + failure-mode doc + rollback runbook + post-launch retro.
 
 ### You're ready for the next level when…
@@ -134,62 +135,69 @@ Ship one agentic feature to production with: at least one tool call, evals runni
 
 ### If your team is small and nobody is at Level 4 yet
 
-Common in teams of 4–8 engineers. Your most senior engineer plays the Level 4 role while growing into it — running the weekly session, reviewing capstones, and being the standing technical advisor. The gap that stays visible is architectural review of production agents: consider booking a few hours a month with an external coach until you have your own Expert in place.
+Common in teams of 4–8 engineers. Your most senior engineer plays the Level 4 role while growing into it — taking check-ins, running capstone demos, and being the standing technical advisor. The gap that stays visible is architectural review of production agents: consider booking a few hours a month with an external coach until you have your own Expert in place.
 
 ---
 
 ## How the program runs
 
-Designed for a six-person engineering team with 90 minutes of protected time per week. No homework — the work happens in the session. Capstones live inside real project work, not on top of it.
+The program is **self-paced**. Each engineer works through modules on their own time, then books a **15-minute check-in** with the engineer lead when they're done with a module. The lead signs them off. They move on. Capstones live inside real project work, not on top of it.
 
-### One — The 90-minute weekly session
+### One — Self-paced modules with a 15-minute check-in
 
-Same time, same place (or video call), every week. All six of you. On the team calendar, treated like an on-call shift — missing it needs a reason.
+Each module is a one-page session-in-a-box: a short read, a hands-on exercise with runnable starter code, a self-check, and a check-in section that tells you what to bring and what the lead will ask.
 
-A typical session:
+The rhythm per engineer:
 
-- **0:00–0:10** — round the room. Each engineer: one thing the new skills helped with in real work this week, one thing that didn't go to plan. ~90 seconds each.
-- **0:10–1:20** — module work. Read together, then do the hands-on exercise. Pair up where it makes sense. Engineers may be on different modules based on level — that's fine, you work in the same room.
-- **1:20–1:30** — show-and-tell. Anyone with something working shares it for two minutes. Capstone demos happen here when they're due.
+1. **Block ~75 minutes during the week** for the module itself. This is protected time on your own calendar, not a group session.
+2. **Run through the self-check** at the end of the module. If you can't answer the questions cleanly, re-read the relevant section.
+3. **Book a 15-minute check-in** with the engineer lead via Slack DM.
+4. **Walk the lead through what you built** for 5–7 minutes. They ask 2–3 probe questions and sign you off.
 
-*Deeper modules (especially in Level 3) sometimes fill the whole 90 minutes. That's expected — move the round-the-room to a Slack thread that week and use the full session for the work.*
+Total time per engineer per module: ~90 minutes (75 of work, 15 of check-in). One module a week is the default pace.
 
-### Two — One mixed cohort
+### Two — The engineer lead
 
-You don't have enough engineers to split into separate Novice / Practitioner / Proficient cohorts and still have real conversation in each. So you don't. The whole team is one cohort.
+One named lead runs the cohort. Their job is to take 15-minute module check-ins, run capstone demos, and answer questions in the cohort Slack channel. They do **not** lecture, run a class, or grade in detail.
 
-When engineers are on different modules in a given week, that's a feature: the Novice working through prompting fundamentals and the Proficient working on observability both share what they did. The senior engineer explaining their dashboard in plain English to the junior is itself a Level 3-going-on-4 skill.
+Time commitment for the lead: ~2.5–3 hours per week (six engineers × one check-in × 15 min, plus capstones and Slack questions). The full playbook is in [`cohort-2026Q3/engineer-lead-playbook.md`](./cohort-2026Q3/engineer-lead-playbook.md).
 
-### Three — Session lead rotates
+For a small team, the lead is usually your most senior engineer until someone else grows into the role.
 
-Six people, six rotations every six weeks. The week's lead keeps time, runs the round-the-room, and signs off any capstone demo that week. Your most senior engineer is the standing technical advisor on every session — they don't have to be the named lead each week.
+### Three — Capstones happen in real work
 
----
+Each capstone applies the level's skills to something you'd be doing anyway:
 
-## Capstones happen in real work, not on the side
+- **Level 1:** use Claude Code on the next real PR you'd ship. The 600-word retro is the capstone deliverable. Demoed 1:1 with the lead (15–20 min).
+- **Level 2:** the next small internal tool the team needs — build it with the new API, tool-use, and eval skills. Demoed to the lead plus 1–2 other engineers (30–45 min).
+- **Level 3:** the next agentic feature on your product roadmap — ship it with the observability, safety, and eval discipline you've practiced. Demoed to the lead plus the standing technical advisor (45–60 min). Must be live for 4+ weeks.
 
-Each capstone is a way of applying the level's skills to something you'd be doing anyway:
+You move up when the four exit criteria are met — the lead confirms during the capstone demo.
 
-- **Level 1:** use Claude Code on the next real PR you'd ship. The 600-word retro is the capstone deliverable.
-- **Level 2:** the next small internal tool the team needs — build it with the new API, tool-use, and eval skills.
-- **Level 3:** the next agentic feature on your product roadmap — ship it with the observability, safety, and eval discipline you've practiced.
+### Four — Optional all-hands every 2–4 weeks
 
-Demo at the weekly session. The team is your reviewer pool. You move up when the four exit criteria are met — the lead that week confirms.
+A 90-minute team session every 2–4 weeks is optional but recommended once the team is past the first couple of modules. Shape: 30 min of themed sharing across levels, 45 min of capstone demos, 15 min of open Q&A. It exists for team cohesion and cross-level pollination — it is **not** on the critical path, and engineers can skip it without falling behind.
 
 ---
 
 ## How long this takes
 
-- Four modules per level, one per session = ~4 weeks of module work per level.
-- Plus a capstone wrap (usually 1–2 sessions of demo + review).
-- So roughly 5–6 weeks per level, per engineer. An engineer placed at Level 1 reaches Level 3 in 4–5 months. An engineer placed at Level 2 gets there in 2–3 months.
+- One module per week (self-paced) × four modules per level = ~4 weeks of module work per level.
+- Plus a capstone (real work — runs in parallel with normal projects, demo in 1–2 sessions).
+- So roughly **5–6 weeks per level, per engineer**. An engineer placed at Level 1 reaches Level 3 in 4–5 months. An engineer placed at Level 2 gets there in 2–3 months.
 
 ---
 
 ## If you stall
 
-Stalling is normal, not a failure. With six people, even one engineer drifting is felt — so the response is fast and small, not formal.
+Stalling is normal, not a failure. The lead watches for it and DMs you fast. Two scripts they'll use:
 
-- **A module didn't fit in 90 minutes:** split it across two sessions. The pace serves the team; the team doesn't serve the pace.
-- **Real work is eating the session time:** protect the slot more firmly, or pause the program for a sprint rather than letting it half-die. Half-running is worse than pausing.
-- **Placement was wrong:** drop the engineer down one level for the rest of the level. No formal demotion, no ceremony. They'll move faster from the right starting point.
+- **Stuck on a module:** *"Want me to look at your code, or do you want to skip this module for now and come back?"*
+- **Real work is eating the time:** *"Want to pause for a sprint, or downshift to one module every two weeks?"*
+
+The point is to keep you moving, not to gate you. If you haven't booked a check-in in 10 days, expect a ping.
+
+Other common scenarios:
+
+- **A module felt too easy:** tell the lead, skip ahead. Probably means your placement was a level too low.
+- **A module felt too hard:** tell the lead. Two options — slow down on this one, or drop to the level below for the rest of the level. No formal demotion, no ceremony. You'll move faster from the right starting point.
