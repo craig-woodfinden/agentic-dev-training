@@ -1,0 +1,29 @@
+# <project name>
+
+What this repo is for, in one paragraph. Who uses it, what it does, what it does NOT do.
+
+## How to run it locally
+
+```bash
+# the exact commands a new engineer would type
+make setup
+make dev
+```
+
+## Patterns easy to get wrong
+
+- Pattern 1 — one sentence on what looks right but isn't.
+- Pattern 2 — same.
+- Pattern 3 — same.
+
+## Tests
+
+```bash
+make test            # all tests
+pytest path/to/test  # single test
+```
+
+## Do-not-touch
+
+- `generated/` — written by build, manual edits get clobbered.
+- `migrations/` — never edit a committed migration; create a new one.

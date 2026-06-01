@@ -1,0 +1,4 @@
+# Core deps used across the training modules.
+# Pin minor versions loosely; bump as Anthropic ships new SDKs.
+anthropic>=0.40
+rich>=13

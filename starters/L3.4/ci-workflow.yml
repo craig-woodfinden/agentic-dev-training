@@ -1,0 +1,26 @@
+# Save as .github/workflows/evals.yml in your real repo.
+name: evals
+on:
+  pull_request:
+    paths:
+      - 'prompts/**'
+      - 'src/agent/**'
+      - 'evals/**'
+
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: python judge.py --threshold 0.85 --evals evals/evals.csv
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-results
+          path: results.csv

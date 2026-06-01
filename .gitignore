@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Local artefacts engineers may generate while running modules
+*.log
+out/
+results.csv
+evals_output.csv
+*.pyc
+
+# Local Claude settings (engineer-specific)
+.claude/settings.local.json
