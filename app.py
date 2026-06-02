@@ -345,8 +345,30 @@ st.markdown(
 )
 
 # ---------- sidebar ----------
+def _find_logo() -> pathlib.Path | None:
+    """Look in assets/ for any file matching indiqator*.{png,jpg,jpeg,webp,svg} (case-insensitive)."""
+    assets = REPO_ROOT / "assets"
+    if not assets.is_dir():
+        return None
+    for path in sorted(assets.iterdir()):
+        if not path.is_file():
+            continue
+        if path.suffix.lower() not in {".png", ".jpg", ".jpeg", ".webp", ".svg"}:
+            continue
+        if "indiqator" in path.stem.lower() or path.stem.lower() in {"logo"}:
+            return path
+    return None
+
+logo = _find_logo()
+if logo is not None:
+    st.sidebar.image(str(logo), width=120)
+else:
+    # Fallback styled wordmark if no logo file has been added to assets/ yet.
+    st.sidebar.markdown(
+        '<div class="indiqator-brand">INDIQ<span class="dot">/</span>TOR</div>',
+        unsafe_allow_html=True,
+    )
 st.sidebar.markdown(
-    '<div class="indiqator-brand">INDIQ<span class="dot">/</span>TOR</div>'
     '<div class="indiqator-tag">Agentic Dev Training</div>',
     unsafe_allow_html=True,
 )
