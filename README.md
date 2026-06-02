@@ -95,9 +95,9 @@ Full descriptions and exit criteria in [`pathway.md`](./pathway.md).
 
 Modules will evolve as we run cohorts. Changes go through PR, reviewed by the program owner.
 
-- **Program owner:** *fill in*
-- **Engineer lead (this cohort):** *fill in*
-- **Standing technical advisor (Level 4-ish):** *fill in*
+- **Program owner:** Craig Woodfinden
+- **Engineer lead (this cohort):** James Grant
+- **Standing technical advisor (Level 4-ish):** James Cook
 
 ---
 
