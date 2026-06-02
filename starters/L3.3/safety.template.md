@@ -1,4 +1,4 @@
-# Safety doc — <agent name>
+# Safety doc -- <agent name>
 
 One page. If you can't keep it to one page, the agent is over-scoped.
 
@@ -16,7 +16,7 @@ Explicit list of negative permissions. Examples:
 - Execute shell commands
 - Handle PII (no SSN/credit card patterns in inputs or outputs)
 
-## Detection — what we watch for
+## Detection -- what we watch for
 - Path-escape attempts in tool args
 - Suspicious tool-call patterns (many reads in a row, etc.)
 - Token usage spikes

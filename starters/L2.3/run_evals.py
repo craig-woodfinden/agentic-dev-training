@@ -1,5 +1,5 @@
 """
-L2.3 starter — minimal eval runner.
+L2.3 starter -- minimal eval runner.
 
 Reads evals.csv with columns: category, input, expected.
 Runs your prompt over each row. Writes results.csv with pass/fail.
@@ -33,7 +33,7 @@ def run_prompt(input_text: str) -> str:
 
 
 def grade(output: str, expected: str, category: str) -> bool:
-    """Substring grade — simple on purpose. Upgrade to LLM-as-judge in L3.4."""
+    """Substring grade -- simple on purpose. Upgrade to LLM-as-judge in L3.4."""
     return expected.lower() in output.lower()
 
 

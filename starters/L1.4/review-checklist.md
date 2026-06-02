@@ -1,4 +1,4 @@
-# AI-generated diff — five-point review checklist
+# AI-generated diff -- five-point review checklist
 
 Print this. Tape it to your monitor for the first month.
 
@@ -12,7 +12,7 @@ the repo. Does it actually exist? Models invent things that feel right.
 
 ## 3. Plausible-but-wrong logic
 Read each new line out loud. Walk a real input through on paper. Off-by-one,
-inverted condition, wrong default — these read fine and run wrong.
+inverted condition, wrong default -- these read fine and run wrong.
 
 ## 4. Tests
 Were any tests deleted, skipped, or weakened? Search for `skip`, `xfail`,

@@ -1,8 +1,8 @@
 """
-L3.2 starter — minimal trace emitter.
+L3.2 starter -- minimal trace emitter.
 
 Wrap your agent loop with `with span("step", trace_id=...):` or use
-`@trace("model_call")` on functions. Events go to stdout as JSON lines —
+`@trace("model_call")` on functions. Events go to stdout as JSON lines --
 pipe them into Loki, Honeycomb, Langfuse, or a file:
 
   python your_agent.py | tee traces.jsonl

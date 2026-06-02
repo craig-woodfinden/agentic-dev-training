@@ -1,4 +1,4 @@
-# L2 Capstone — Internal Tool
+# L2 Capstone -- Internal Tool
 
 **Tool name:**
 **Repo / location:**

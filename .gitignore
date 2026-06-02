@@ -1,4 +1,9 @@
-# Python
+# Node
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Python (legacy starters still present)
 __pycache__/
 *.py[cod]
 *.egg-info/

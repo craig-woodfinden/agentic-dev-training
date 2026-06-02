@@ -1,5 +1,5 @@
 """
-L3.4 starter — LLM-as-judge eval runner.
+L3.4 starter -- LLM-as-judge eval runner.
 
 Reads evals.csv with columns: category, input, expected_or_rubric, grader.
 - grader=substring: simple contains-check (cheap, deterministic)
@@ -7,7 +7,7 @@ Reads evals.csv with columns: category, input, expected_or_rubric, grader.
 
 Run:
   python judge.py --threshold 0.85
-Exit code 1 if below threshold — wire this into CI.
+Exit code 1 if below threshold -- wire this into CI.
 """
 import argparse
 import csv
@@ -18,7 +18,7 @@ import anthropic
 client = anthropic.Anthropic()
 
 CANDIDATE_MODEL = "claude-haiku-4-5"
-JUDGE_MODEL = "claude-sonnet-4-6"  # NOT Haiku — too lenient as a judge
+JUDGE_MODEL = "claude-sonnet-4-6"  # NOT Haiku -- too lenient as a judge
 
 YOUR_PROMPT = (
     "Extract decisions, owners, and open questions from the text below. "
@@ -100,7 +100,7 @@ def main() -> None:
             print(f"[{grader:9}] {score}/{max_score}  {row['category']:14} {row['input'][:60]}")
 
     pass_rate = total / max_possible
-    print(f"\n{total}/{max_possible} points ({100*pass_rate:.1f}%) — threshold {100*args.threshold:.0f}%")
+    print(f"\n{total}/{max_possible} points ({100*pass_rate:.1f}%) -- threshold {100*args.threshold:.0f}%")
     if pass_rate < args.threshold:
         print("FAIL")
         sys.exit(1)

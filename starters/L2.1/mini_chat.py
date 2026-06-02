@@ -1,5 +1,5 @@
 """
-L2.1 starter — multi-turn streaming chat CLI.
+L2.1 starter -- multi-turn streaming chat CLI.
 
 Run:
   pip install anthropic
@@ -42,11 +42,11 @@ def call_with_retry(messages, max_attempts: int = 3):
             return full, final.usage
         except anthropic.RateLimitError as e:
             wait = 2 ** attempt
-            print(f"\n[rate limited — sleeping {wait}s]", file=sys.stderr)
+            print(f"\n[rate limited -- sleeping {wait}s]", file=sys.stderr)
             time.sleep(wait)
         except anthropic.APIError as e:
             wait = 2 ** attempt
-            print(f"\n[api error {type(e).__name__} — sleeping {wait}s]", file=sys.stderr)
+            print(f"\n[api error {type(e).__name__} -- sleeping {wait}s]", file=sys.stderr)
             time.sleep(wait)
     raise RuntimeError("retries exhausted")
 
@@ -54,7 +54,7 @@ def call_with_retry(messages, max_attempts: int = 3):
 def main() -> None:
     messages: list[dict] = []
     total_in = total_out = 0
-    print("mini-chat — type /reset to clear, Ctrl-D to quit\n")
+    print("mini-chat -- type /reset to clear, Ctrl-D to quit\n")
     while True:
         try:
             user = input("you> ").strip()

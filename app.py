@@ -77,7 +77,7 @@ QUESTIONS = [
         "No.",
         "The basics.",
         "Yes, with my own examples.",
-        "I've already done this — the team uses my workflows.",
+        "I've already done this -- the team uses my workflows.",
     ]),
     ("When you build with an LLM, how do you handle prompt injection / unsafe inputs?", [
         "I don't think about it.",
@@ -97,20 +97,20 @@ QUESTIONS = [
 def level_for(score: int) -> tuple[str, str, str, str]:
     """Returns (short, full, blurb, first_module)."""
     if score <= 8:
-        return ("L1", "Level 1 — Novice",
+        return ("L1", "Level 1 -- Novice",
                 "You've used AI tools casually. Start with the L1 modules to build a daily, deliberate workflow.",
                 "L1.1")
     if score <= 16:
-        return ("L2", "Level 2 — Practitioner",
+        return ("L2", "Level 2 -- Practitioner",
                 "You're a confident daily user. Start with the L2 modules to learn the API, tool use, and evals.",
                 "L2.1")
     if score <= 24:
-        return ("L3", "Level 3 — Proficient",
+        return ("L3", "Level 3 -- Proficient",
                 "You can build LLM features. Time to architect, observe, secure, and scale them.",
                 "L3.1")
-    return ("L4", "Level 4 — Expert",
+    return ("L4", "Level 4 -- Expert",
             "You're ready to architect cross-team systems and mentor others. See the Level 4 section in pathway.md.",
-            "—")
+            "--")
 
 
 # ---------- helpers ----------
@@ -194,7 +194,7 @@ def onboard_engineer(name: str, score: int, level_short: str, first_module: str)
     # Update cohort README
     readme_path = COHORT_DIR / "README.md"
     readme = readme_path.read_text()
-    new_row = f"| {name} | {score}/30 | {level_short} | {first_module} | — | not started |"
+    new_row = f"| {name} | {score}/30 | {level_short} | {first_module} | -- | not started |"
     existing = re.compile(rf"^\| {re.escape(name)} \|.*\|\s*$", re.MULTILINE)
     if existing.search(readme):
         readme = existing.sub(new_row, readme)
@@ -209,7 +209,7 @@ def onboard_engineer(name: str, score: int, level_short: str, first_module: str)
 
     msg = ("Folder created. Status filled in. Cohort table updated."
            if created else
-           "Folder already existed — status and cohort table updated.")
+           "Folder already existed -- status and cohort table updated.")
     return True, msg
 
 
@@ -270,7 +270,7 @@ st.markdown(
         --iq-ink: #0E1733;
         --iq-grey: #F4F6FA;
       }
-      /* App title — pink underline accent, navy ink */
+      /* App title -- pink underline accent, navy ink */
       .stApp h1 {
         color: var(--iq-ink) !important;
         border-bottom: 4px solid var(--iq-pink);
@@ -279,7 +279,7 @@ st.markdown(
         margin-bottom: 16px;
         line-height: 1.15;
       }
-      /* Section headings — navy */
+      /* Section headings -- navy */
       .stApp h2, .stApp h3 {
         color: var(--iq-navy) !important;
       }
@@ -312,17 +312,17 @@ st.markdown(
         background: #C2126A;
         border-color: #C2126A;
       }
-      /* Metric numbers — pink accent */
+      /* Metric numbers -- pink accent */
       [data-testid="stMetricValue"] {
         color: var(--iq-pink);
       }
-      /* Info / success / warning callouts — tone down to brand palette */
+      /* Info / success / warning callouts -- tone down to brand palette */
       [data-testid="stAlertContainer"][kind="info"],
       [data-testid="stAlert"] [data-baseweb="notification"][role="alert"]:has(svg[aria-label*="Info"]) {
         background: var(--iq-pink-soft);
         border-left: 4px solid var(--iq-pink);
       }
-      /* Tabs / radio chip — focus state */
+      /* Tabs / radio chip -- focus state */
       [data-baseweb="radio"] [aria-checked="true"] + div {
         color: var(--iq-pink);
       }
@@ -435,12 +435,12 @@ def page_welcome() -> None:
             use_container_width=True, hide_index=True,
         )
     else:
-        st.info("No engineers in the cohort yet. Be the first — take the quiz.")
+        st.info("No engineers in the cohort yet. Be the first -- take the quiz.")
 
 
 def page_quiz() -> None:
     st.title("Placement quiz")
-    st.caption("Ten questions, ~5 minutes. Answer honestly — what you do today, not what you could do if you had to.")
+    st.caption("Ten questions, ~5 minutes. Answer honestly -- what you do today, not what you could do if you had to.")
 
     if st.session_state.quiz_done and not st.button("Retake the quiz"):
         # Show results + onboard form
@@ -473,7 +473,7 @@ def page_quiz() -> None:
 
         with st.form("onboard"):
             name = st.text_input(
-                "Your name (lowercase, used as folder name — e.g. 'alex' or 'alex-w')",
+                "Your name (lowercase, used as folder name -- e.g. 'alex' or 'alex-w')",
                 value=st.session_state.name or "",
                 help="Letters, numbers, hyphens, underscores only.",
             )
@@ -490,10 +490,10 @@ def page_quiz() -> None:
                 st.session_state.name = name
                 st.session_state.onboarded = True
                 st.markdown(
-                    "**Last step — commit and push from your terminal:**\n\n"
+                    "**Last step -- commit and push from your terminal:**\n\n"
                     "```bash\n"
                     "git add cohort-2026Q3/\n"
-                    f'git commit -m "Add {name} to cohort — placed at {level_short}"\n'
+                    f'git commit -m "Add {name} to cohort -- placed at {level_short}"\n'
                     "git push\n"
                     "```\n\n"
                     "Then head to **My modules** to start."
@@ -538,7 +538,7 @@ def page_my_modules() -> None:
     st.title("My modules")
 
     if not st.session_state.onboarded:
-        st.warning("Take the placement quiz first — the modules need to know your level.")
+        st.warning("Take the placement quiz first -- the modules need to know your level.")
         return
 
     level_short = st.session_state.level_short
@@ -553,7 +553,7 @@ def page_my_modules() -> None:
 
     # Module picker
     codes = [module_code(m) for m in modules]
-    labels = [f"{module_code(m)} — {module_title(m)}" for m in modules]
+    labels = [f"{module_code(m)} -- {module_title(m)}" for m in modules]
     selected_label = st.selectbox("Module", labels, index=0, label_visibility="collapsed")
     selected_idx = labels.index(selected_label)
     selected_module = modules[selected_idx]
@@ -571,7 +571,7 @@ def page_my_modules() -> None:
 
     if st.button(f"I'm starting {selected_code} → mark on my row", help="Updates 'Current module' in the cohort table."):
         mark_module_in_progress(name, selected_code)
-        st.success(f"Cohort table updated — you're on {selected_code}.")
+        st.success(f"Cohort table updated -- you're on {selected_code}.")
 
     st.divider()
 
@@ -584,7 +584,7 @@ def page_my_modules() -> None:
     st.subheader("Ready for your check-in?")
     st.markdown(
         "Once you've worked through the *Do* section and run the *Self-check*, head to the "
-        "**Check-in helper** page in the sidebar — it shows what to bring, then reach out to your engineer lead directly."
+        "**Check-in helper** page in the sidebar -- it shows what to bring, then reach out to your engineer lead directly."
     )
 
 
@@ -603,7 +603,7 @@ def page_checkin_helper() -> None:
         return
 
     codes = [module_code(m) for m in modules]
-    labels = [f"{module_code(m)} — {module_title(m)}" for m in modules]
+    labels = [f"{module_code(m)} -- {module_title(m)}" for m in modules]
     selected_label = st.selectbox("Which module did you just finish?", labels, index=0)
     selected_idx = labels.index(selected_label)
     selected_code = codes[selected_idx]
@@ -623,12 +623,12 @@ def page_checkin_helper() -> None:
 
     st.info(
         f"**Reach out to your engineer lead** to set up a 15-minute check-in for {selected_code}. "
-        "Use whatever channel your team uses — Teams chat, walk-up, calendar invite. "
+        "Use whatever channel your team uses -- Teams chat, walk-up, calendar invite. "
         "The lead will confirm a time."
     )
 
     if selfcheck_match:
-        with st.expander("Self-check — make sure you can answer these first", expanded=True):
+        with st.expander("Self-check -- make sure you can answer these first", expanded=True):
             # Strip the leading `## Self-check ...` heading line for cleaner display
             body = re.sub(r"^## .+\n", "", selfcheck_match.group(0)).strip()
             st.markdown(body)
@@ -642,10 +642,10 @@ def page_checkin_helper() -> None:
     st.markdown("**The check-in itself takes 15 minutes:**")
     st.markdown(
         """
-- 2 min — you name the module, the lead opens your status.md
-- 5–7 min — you walk through what you built. You drive, they listen.
-- 3–5 min — they ask 2–3 probe questions from the module's check-in section.
-- 1–2 min — they sign you off in your status.md.
+- 2 min -- you name the module, the lead opens your status.md
+- 5-7 min -- you walk through what you built. You drive, they listen.
+- 3-5 min -- they ask 2-3 probe questions from the module's check-in section.
+- 1-2 min -- they sign you off in your status.md.
         """
     )
 

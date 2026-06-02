@@ -1,5 +1,5 @@
 """
-L2.4 starter — run the same eval set against three models.
+L2.4 starter -- run the same eval set against three models.
 
 Builds on L2.3. Reads evals.csv, runs each row against Haiku, Sonnet, and Opus,
 writes model_comparison.csv with pass rate, tokens, latency per model.

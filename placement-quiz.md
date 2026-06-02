@@ -1,6 +1,6 @@
 # Placement quiz
 
-Ten questions, ~5 minutes. Pick the option that honestly describes what you do today — not what you could do if you had to, and not what you did once last year.
+Ten questions, ~5 minutes. Pick the option that honestly describes what you do today -- not what you could do if you had to, and not what you did once last year.
 
 Score yourself at the end, or run `python score_quiz.py` for an interactive version.
 
@@ -60,7 +60,7 @@ Score yourself at the end, or run `python score_quiz.py` for an interactive vers
 - (0) No.
 - (1) The basics.
 - (2) Yes, with my own examples.
-- (3) I've already done this — the team uses my workflows.
+- (3) I've already done this -- the team uses my workflows.
 
 ### 9. When you build with an LLM, how do you handle prompt injection / unsafe inputs?
 
@@ -80,13 +80,13 @@ Score yourself at the end, or run `python score_quiz.py` for an interactive vers
 
 ## Scoring
 
-Add up the numbers next to your answers. Total is 0–30.
+Add up the numbers next to your answers. Total is 0-30.
 
 | Score   | Start at                    | What that means                                                                 |
 |---------|-----------------------------|---------------------------------------------------------------------------------|
-| 0 – 8   | **Level 1 — Novice**        | You've used AI tools casually. Time to build a daily, deliberate workflow.       |
-| 9 – 16  | **Level 2 — Practitioner**  | You're a confident daily user. Time to call the API, design tools, write evals.  |
-| 17 – 24 | **Level 3 — Proficient**    | You can build LLM features. Time to architect, observe, secure, and scale them.  |
-| 25 – 30 | **Level 4 — Expert**        | You're ready to architect cross-team systems and mentor others.                  |
+| 0 - 8   | **Level 1 -- Novice**        | You've used AI tools casually. Time to build a daily, deliberate workflow.       |
+| 9 - 16  | **Level 2 -- Practitioner**  | You're a confident daily user. Time to call the API, design tools, write evals.  |
+| 17 - 24 | **Level 3 -- Proficient**    | You can build LLM features. Time to architect, observe, secure, and scale them.  |
+| 25 - 30 | **Level 4 -- Expert**        | You're ready to architect cross-team systems and mentor others.                  |
 
 **Not sure?** Round down. The first module of any level is fast for someone who already knows the material, and you'll only level up faster.

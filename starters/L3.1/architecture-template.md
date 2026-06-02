@@ -1,4 +1,4 @@
-# Agent architecture sketch — <name of the problem>
+# Agent architecture sketch -- <name of the problem>
 
 Fill one of these in per problem. Aim for half a page, not five.
 

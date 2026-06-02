@@ -9,7 +9,7 @@ The program is self-paced. Each engineer works through their level's modules on 
 - **Engineer lead:** *fill in (your most senior engineer until someone else grows into it)*
 - **Standing technical advisor:** *fill in (may be the same person as the lead)*
 - **Cohort chat:** *fill in* (Teams channel or wherever the team talks)
-- **Optional all-hands cadence:** every 2 weeks / every 4 weeks / not yet — *pick one*
+- **Optional all-hands cadence:** every 2 weeks / every 4 weeks / not yet -- *pick one*
 
 ## How to join
 
@@ -26,8 +26,7 @@ Run `python score_quiz.py` to find your starting level, then update the table be
 
 | Engineer | Quiz score | Starting level | Current module | Last check-in | Capstone status |
 |---|---|---|---|---|---|
-| testuser | 10/30 | L2 | L2.1 | — | not started |
-| craig-w | 6/30 | L1 | L1.1 | — | not started |
+| *name* | | | | | |
 | *name* | | | | | |
 | *name* | | | | | |
 | *name* | | | | | |
@@ -40,7 +39,7 @@ The engineer lead refreshes this table each Friday based on the week's check-ins
 1. Finish the module, including the self-check section.
 2. Message the engineer lead with: module code (e.g. `L2.2`), a one-line summary of what you built, and three suggested 15-minute slots in the next two days.
 3. Bring the artefacts the module's check-in section lists.
-4. Walk the lead through what you built for 5–7 minutes. They probe 2–3 questions and sign you off.
+4. Walk the lead through what you built for 5-7 minutes. They probe 2-3 questions and sign you off.
 
 If you haven't booked one in 10+ days, expect the lead to DM you.
 
@@ -49,7 +48,7 @@ If you haven't booked one in 10+ days, expect the lead to DM you.
 Every Friday the engineer lead posts a status update in `#agentic-dev-training`:
 
 ```
-Cohort status — week of <date>
+Cohort status -- week of <date>
 
 L1: <names> currently on <module>
 L2: <names> currently on <module>
@@ -65,6 +64,6 @@ If you haven't booked a check-in in 10+ days, ping me.
 
 Notes from the optional all-hands sessions (if you run them). Two sentences max per session.
 
-- **Kickoff (date):** placement quiz, cohort kickoff. Everyone scored. Two at L1, three at L2, one at L3. (Example — replace with reality.)
+- **Kickoff (date):** placement quiz, cohort kickoff. Everyone scored. Two at L1, three at L2, one at L3. (Example -- replace with reality.)
 - **All-hands 1 (date):** *fill in*
 - **All-hands 2 (date):** *fill in*

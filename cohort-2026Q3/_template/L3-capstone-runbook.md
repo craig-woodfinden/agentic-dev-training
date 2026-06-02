@@ -1,4 +1,4 @@
-# L3 Capstone — Production Agent
+# L3 Capstone -- Production Agent
 
 **Feature name:**
 **Production link / docs:**

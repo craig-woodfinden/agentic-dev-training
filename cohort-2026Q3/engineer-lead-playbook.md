@@ -1,4 +1,4 @@
-# Engineer lead — playbook
+# Engineer lead -- playbook
 
 You're the engineer lead for the cohort. This file is your operating manual.
 
@@ -13,26 +13,26 @@ You don't lecture. You don't run a 90-minute class. You ask sharp questions, sig
 Rough numbers for a 6-engineer cohort:
 
 - **Module check-ins:** 6 engineers × 1 module/week × 15 min ≈ **90 minutes/week**
-- **Capstone demos:** ~3/quarter × 30–45 min ≈ **1–2 hours/month**
+- **Capstone demos:** ~3/quarter × 30-45 min ≈ **1-2 hours/month**
 - **Ad-hoc questions in the cohort channel:** **30 min/week**
 - **Weekly status nudge (see below):** **15 min/week**
 
-**Total: ~2.5–3 hours/week.** This is meant to be sustainable while you still do real engineering work.
+**Total: ~2.5-3 hours/week.** This is meant to be sustainable while you still do real engineering work.
 
 ---
 
-## The 15-minute module check-in — the standard format
+## The 15-minute module check-in -- the standard format
 
-Engineer reaches out to you (chat, walk-up, calendar invite — whatever the team uses) after they've completed a module. They bring the artefacts the module asks for. You run the check-in the same way every time.
+Engineer reaches out to you (chat, walk-up, calendar invite -- whatever the team uses) after they've completed a module. They bring the artefacts the module asks for. You run the check-in the same way every time.
 
 | Time | What happens |
 |---|---|
-| 0:00–0:02 | Engineer names the module. You open their `status.md`. |
-| 0:02–0:09 | Engineer walks through what they built. They drive. You listen. |
-| 0:09–0:13 | You ask 2–3 probe questions from the module's check-in section. |
-| 0:13–0:15 | Sign off (or don't), update their `status.md`, agree the next module. |
+| 0:00-0:02 | Engineer names the module. You open their `status.md`. |
+| 0:02-0:09 | Engineer walks through what they built. They drive. You listen. |
+| 0:09-0:13 | You ask 2-3 probe questions from the module's check-in section. |
+| 0:13-0:15 | Sign off (or don't), update their `status.md`, agree the next module. |
 
-**That's it.** If it's running over, end on time and ask the engineer to come back when ready — don't drag it to 30 minutes.
+**That's it.** If it's running over, end on time and ask the engineer to come back when ready -- don't drag it to 30 minutes.
 
 ---
 
@@ -41,24 +41,24 @@ Engineer reaches out to you (chat, walk-up, calendar invite — whatever the tea
 The engineer **passes** the module when:
 
 1. They brought every artefact the module's check-in section asks for.
-2. They walked through it without reading off the screen — they can describe what they built and why.
-3. They answered your probe questions credibly (not perfectly — credibly).
+2. They walked through it without reading off the screen -- they can describe what they built and why.
+3. They answered your probe questions credibly (not perfectly -- credibly).
 4. The **Done when** criterion at the bottom of the module is genuinely met.
 
 If any of these fail:
 
-- Be specific. *"The eval suite is there but you can't tell me which case caught the regression — go back and pick that one apart, then come back."*
-- Set a date to come back. Usually 2–7 days.
+- Be specific. *"The eval suite is there but you can't tell me which case caught the regression -- go back and pick that one apart, then come back."*
+- Set a date to come back. Usually 2-7 days.
 - Don't make a big deal of it. Modules that need a second pass are normal.
 
 ---
 
 ## Probe-question rules of thumb
 
-The modules list suggested probes. Don't just read them — pick the one the engineer seems least ready for.
+The modules list suggested probes. Don't just read them -- pick the one the engineer seems least ready for.
 
 Good probes are:
-- **Open**, not yes/no. *"Walk me through…"* not *"Did you do X?"*
+- **Open**, not yes/no. *"Walk me through..."* not *"Did you do X?"*
 - **About what they actually did**, not the abstract topic. *"Show me your prompt"* not *"explain prompting"*.
 - **One step deeper than they're comfortable.** If they nailed the happy path, push on failure modes.
 
@@ -72,18 +72,18 @@ If they freeze on every probe, you're being too hard. Pull back to what they act
 
 ---
 
-## Capstone demos — the longer format
+## Capstone demos -- the longer format
 
 Capstones are not a 15-minute check-in. They are the real deliverable for the level.
 
-### L1 capstone (15–20 min, just you + engineer)
+### L1 capstone (15-20 min, just you + engineer)
 
 - Engineer demos the PR they shipped using Claude Code.
 - They walk through their 600-word retro.
 - You probe: what went wrong, what would they change.
 - Sign off if the retro is honest and concrete.
 
-### L2 capstone (30–45 min, you + 1–2 other engineers from the cohort)
+### L2 capstone (30-45 min, you + 1-2 other engineers from the cohort)
 
 - Engineer demos the small internal tool live, end-to-end.
 - They show the eval suite running.
@@ -91,7 +91,7 @@ Capstones are not a 15-minute check-in. They are the real deliverable for the le
 - The other engineers ask questions. You arbitrate.
 - Sign off if the tool works, the evals are real, and the cost is defensible.
 
-### L3 capstone (45–60 min, you + standing technical advisor + interested cohort members)
+### L3 capstone (45-60 min, you + standing technical advisor + interested cohort members)
 
 - Engineer demos the production agent.
 - They walk the observability dashboard live.
@@ -102,7 +102,7 @@ Capstones are not a 15-minute check-in. They are the real deliverable for the le
 
 ---
 
-## Weekly cadence — what you do
+## Weekly cadence -- what you do
 
 ### Monday (5 min)
 
@@ -117,7 +117,7 @@ Take check-ins as engineers book them. Try to respond to a booking request withi
 Post a short status in the team chat:
 
 ```
-Cohort status — week of <date>
+Cohort status -- week of <date>
 
 L1: <names> currently on <module>
 L2: <names> currently on <module>
@@ -137,7 +137,7 @@ Update `cohort-2026Q3/README.md` with the same.
 
 A 10-day gap with no booked check-in is your trigger. DM them directly. Two scripts:
 
-**If they're stuck:** *"Hey, noticed you're on L2.2 — anything blocking you? Want me to look at your code, or do you want to skip ahead to L2.3 and come back?"*
+**If they're stuck:** *"Hey, noticed you're on L2.2 -- anything blocking you? Want me to look at your code, or do you want to skip ahead to L2.3 and come back?"*
 
 **If life is getting in the way:** *"Hey, totally fine if real work is eating the time. Want to pause for a sprint, or downshift to one module every two weeks?"*
 
@@ -150,7 +150,7 @@ Don't lecture. Don't make it big. Most stalls resolve with a single DM.
 Common in Level 3 modules, especially observability and safety. Three honest options:
 
 1. **Defer to the standing technical advisor.** They sit above the cohort for exactly this reason.
-2. **Say "I don't know — let's figure it out together"** and pull up the docs in the check-in.
+2. **Say "I don't know -- let's figure it out together"** and pull up the docs in the check-in.
 3. **Book an external coaching slot** if it's a recurring gap (e.g. agent architecture). A peer at another company or an Anthropic forward-deployed engineer can cover the gap for a couple of months until your team has a real Level 4.
 
 What you should *not* do is bluff. Engineers learn faster from a lead who admits ignorance and looks it up than from one who waves a hand.
@@ -159,9 +159,9 @@ What you should *not* do is bluff. Engineers learn faster from a lead who admits
 
 ## The optional all-hands session
 
-If the team wants synchronous time together — and they often will, after a few weeks of self-paced work — schedule an optional 90-minute session every 2–4 weeks. Suggested shape:
+If the team wants synchronous time together -- and they often will, after a few weeks of self-paced work -- schedule an optional 90-minute session every 2-4 weeks. Suggested shape:
 
-- **First 30 min:** themed sharing. Pick one craft theme (prompting, evals, observability). Each engineer talks for 3–4 minutes about what they did at their level around that theme.
+- **First 30 min:** themed sharing. Pick one craft theme (prompting, evals, observability). Each engineer talks for 3-4 minutes about what they did at their level around that theme.
 - **Middle 45 min:** capstone demos for anyone ready.
 - **Last 15 min:** open Q&A. Bring the hardest question you didn't want to ask in a check-in.
 
@@ -187,5 +187,5 @@ Use this as the final sanity check before you mark a module complete in an engin
 - [ ] **Done when** criterion is met
 
 Four of four → sign off.
-Three of four → ask them to come back in 2–7 days on the specific gap.
+Three of four → ask them to come back in 2-7 days on the specific gap.
 Two or fewer → restart the module.

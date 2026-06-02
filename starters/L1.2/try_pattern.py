@@ -1,8 +1,8 @@
 """
-L1.2 starter — run the same task through five different prompt patterns.
+L1.2 starter -- run the same task through five different prompt patterns.
 
 Edit INPUT below to be a real piece of messy text from your work
-(Teams chat, meeting notes, customer email — anonymise if needed).
+(Teams chat, meeting notes, customer email -- anonymise if needed).
 
 Each PATTERN is a different prompt design. Run them all, compare the
 outputs. Save your winner to ../../cohort-2026Q3/<your-name>/L1.2-prompt-v1.txt
@@ -26,11 +26,11 @@ Anonymise it if needed.
 
 EXAMPLE_INPUT = """We discussed shipping the auth flow this Friday. Ana
 will own the backend changes and asks for an extra reviewer. We still
-don't know if SSO is in scope — leaving that to next standup."""
+don't know if SSO is in scope -- leaving that to next standup."""
 
 EXAMPLE_OUTPUT = {
     "decisions": ["Ship auth flow this Friday"],
-    "owners": ["Ana — backend changes"],
+    "owners": ["Ana -- backend changes"],
     "open_questions": ["Is SSO in scope?"],
 }
 

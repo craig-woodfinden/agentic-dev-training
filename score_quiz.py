@@ -5,7 +5,7 @@ Interactive placement quiz for the Agentic Development training program.
 Run:  python score_quiz.py
 
 After scoring, the script will offer to set up your personal cohort folder
-automatically — create cohort-2026Q3/<your-name>/, fill in your status.md,
+automatically -- create cohort-2026Q3/<your-name>/, fill in your status.md,
 and add your row to the cohort table. You just need to commit and push.
 """
 import datetime
@@ -61,7 +61,7 @@ QUESTIONS = [
         "No.",
         "The basics.",
         "Yes, with my own examples.",
-        "I've already done this — the team uses my workflows.",
+        "I've already done this -- the team uses my workflows.",
     ]),
     ("When you build with an LLM, how do you handle prompt injection / unsafe inputs?", [
         "I don't think about it.",
@@ -81,20 +81,20 @@ QUESTIONS = [
 def level_for(score: int) -> tuple[str, str, str, str]:
     """Returns (level_short, level_full, description, first_module)."""
     if score <= 8:
-        return ("L1", "Level 1 — Novice",
+        return ("L1", "Level 1 -- Novice",
                 "You've used AI tools casually. Start with the L1 modules to build a daily, deliberate workflow.",
                 "L1.1")
     if score <= 16:
-        return ("L2", "Level 2 — Practitioner",
+        return ("L2", "Level 2 -- Practitioner",
                 "You're a confident daily user. Start with the L2 modules to learn the API, tool use, and evals.",
                 "L2.1")
     if score <= 24:
-        return ("L3", "Level 3 — Proficient",
+        return ("L3", "Level 3 -- Proficient",
                 "You can build LLM features. Start with the L3 modules to architect, observe, secure, and scale them.",
                 "L3.1")
-    return ("L4", "Level 4 — Expert",
+    return ("L4", "Level 4 -- Expert",
             "You're ready to architect cross-team systems and mentor others. See the Level 4 section in pathway.md.",
-            "—")
+            "--")
 
 
 def ask(i: int, question: str, options: list[str]) -> int:
@@ -109,7 +109,7 @@ def ask(i: int, question: str, options: list[str]) -> int:
 
 
 def onboard(score: int, level_short: str, level_full: str, first_module: str) -> None:
-    """Optional onboarding flow — create the engineer's cohort folder and update trackers."""
+    """Optional onboarding flow -- create the engineer's cohort folder and update trackers."""
     print()
     print("=" * 60)
     print("SET UP YOUR COHORT FOLDER AUTOMATICALLY?")
@@ -136,7 +136,7 @@ def onboard(score: int, level_short: str, level_full: str, first_module: str) ->
 
     # Ask for name
     while True:
-        name = input("\nYour name (lowercase, used as folder name — e.g. 'alex' or 'alex-w'): ").strip().lower()
+        name = input("\nYour name (lowercase, used as folder name -- e.g. 'alex' or 'alex-w'): ").strip().lower()
         if not name:
             print("Skipping onboarding.")
             print_manual_instructions(score, level_short, first_module)
@@ -179,7 +179,7 @@ def onboard(score: int, level_short: str, level_full: str, first_module: str) ->
     # Update cohort README
     readme_path = cohort_dir / "README.md"
     readme = readme_path.read_text()
-    new_row = f"| {name} | {score}/30 | {level_short} | {first_module} | — | not started |"
+    new_row = f"| {name} | {score}/30 | {level_short} | {first_module} | -- | not started |"
 
     # If engineer already in table, update their row
     existing = re.compile(rf"^\| {re.escape(name)} \|.*\|\s*$", re.MULTILINE)
@@ -201,13 +201,13 @@ def onboard(score: int, level_short: str, level_full: str, first_module: str) ->
     # Final instructions
     print()
     print("=" * 60)
-    print("ALL SET. ONE LAST STEP — COMMIT AND PUSH.")
+    print("ALL SET. ONE LAST STEP -- COMMIT AND PUSH.")
     print("=" * 60)
     print()
     print("Run these three commands:")
     print()
     print("  git add cohort-2026Q3/")
-    print(f'  git commit -m "Add {name} to cohort — placed at {level_short}"')
+    print(f'  git commit -m "Add {name} to cohort -- placed at {level_short}"')
     print("  git push")
     print()
     print(f"Then open modules/{first_module}-*.md and get started.")
@@ -221,8 +221,8 @@ def print_manual_instructions(score: int, level_short: str, first_module: str) -
     print("OK, to set up manually:")
     print()
     print("  1. cp -r cohort-2026Q3/_template cohort-2026Q3/<your-name>")
-    print(f"  2. Edit cohort-2026Q3/<your-name>/status.md — fill in score ({score}/30), level ({level_short}), today's date")
-    print(f"  3. Edit cohort-2026Q3/README.md — add your row to the table")
+    print(f"  2. Edit cohort-2026Q3/<your-name>/status.md -- fill in score ({score}/30), level ({level_short}), today's date")
+    print(f"  3. Edit cohort-2026Q3/README.md -- add your row to the table")
     print( "  4. git add . && git commit -m \"Add <name> to cohort\" && git push")
     print()
     print(f"Your first module is modules/{first_module}-*.md")
@@ -231,9 +231,9 @@ def print_manual_instructions(score: int, level_short: str, first_module: str) -
 
 def main() -> None:
     print("=" * 60)
-    print("AGENTIC DEVELOPMENT — PLACEMENT QUIZ")
+    print("AGENTIC DEVELOPMENT -- PLACEMENT QUIZ")
     print("=" * 60)
-    print("Ten questions, ~5 minutes. Answer honestly — what you do today,")
+    print("Ten questions, ~5 minutes. Answer honestly -- what you do today,")
     print("not what you could do if you had to.")
     total = 0
     for i, (q, opts) in enumerate(QUESTIONS, start=1):
@@ -246,7 +246,7 @@ def main() -> None:
     print("=" * 60)
     print(note)
 
-    # Onboarding flow (only for L1-L3 — L4s don't need a cohort folder)
+    # Onboarding flow (only for L1-L3 -- L4s don't need a cohort folder)
     if level_short in {"L1", "L2", "L3"}:
         onboard(total, level_short, level_full, first_module)
     else:

@@ -1,5 +1,5 @@
 """
-L1.1 starter — your first Anthropic API call.
+L1.1 starter -- your first Anthropic API call.
 
 Run:
   pip install anthropic

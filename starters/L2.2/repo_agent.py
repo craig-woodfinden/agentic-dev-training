@@ -1,5 +1,5 @@
 """
-L2.2 starter — tool-using agent that answers questions about a local repo.
+L2.2 starter -- tool-using agent that answers questions about a local repo.
 
 Usage:
   pip install anthropic
@@ -113,7 +113,7 @@ def main() -> None:
                 })
         messages.append({"role": "user", "content": tool_results})
 
-    print(f"\n[stopped at max_steps={MAX_STEPS} — agent did not finish]")
+    print(f"\n[stopped at max_steps={MAX_STEPS} -- agent did not finish]")
 
 
 if __name__ == "__main__":
