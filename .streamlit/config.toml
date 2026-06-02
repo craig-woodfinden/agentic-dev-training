@@ -1,0 +1,10 @@
+# Indiqator brand palette
+# - primaryColor: hot pink / magenta — sampled from the gauge arc in the logo
+# - textColor:    deep navy — sampled from the inner gauge ring
+# - backgroundColor + secondaryBackgroundColor: white + very subtle warm grey
+[theme]
+primaryColor = "#E6157D"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F4F6FA"
+textColor = "#0E1733"
+font = "sans serif"

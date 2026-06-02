@@ -8,7 +8,7 @@ The program is self-paced. Each engineer works through their level's modules on 
 
 - **Engineer lead:** *fill in (your most senior engineer until someone else grows into it)*
 - **Standing technical advisor:** *fill in (may be the same person as the lead)*
-- **Cohort Slack channel:** `#agentic-dev-training`
+- **Cohort chat:** *fill in* (Teams channel or wherever the team talks)
 - **Optional all-hands cadence:** every 2 weeks / every 4 weeks / not yet — *pick one*
 
 ## How to join
@@ -26,7 +26,7 @@ Run `python score_quiz.py` to find your starting level, then update the table be
 
 | Engineer | Quiz score | Starting level | Current module | Last check-in | Capstone status |
 |---|---|---|---|---|---|
-| *name* | *e.g. 7/30* | L1 / L2 / L3 | *e.g. L1.3* | *YYYY-MM-DD* | *not started / in progress / signed off* |
+| testuser | 10/30 | L2 | L2.1 | — | not started |
 | *name* | | | | | |
 | *name* | | | | | |
 | *name* | | | | | |
@@ -38,7 +38,7 @@ The engineer lead refreshes this table each Friday based on the week's check-ins
 ## How to book a check-in (engineers)
 
 1. Finish the module, including the self-check section.
-2. Slack-DM the engineer lead with: module code (e.g. `L2.2`), a one-line summary of what you built, and three suggested 15-minute slots in the next two days.
+2. Message the engineer lead with: module code (e.g. `L2.2`), a one-line summary of what you built, and three suggested 15-minute slots in the next two days.
 3. Bring the artefacts the module's check-in section lists.
 4. Walk the lead through what you built for 5–7 minutes. They probe 2–3 questions and sign you off.
 

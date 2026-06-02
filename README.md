@@ -28,7 +28,7 @@ Streamlit will print a URL (usually `http://localhost:8501`) and open it in your
 1. **Take the placement quiz** — 10 questions, ~5 min.
 2. **The app sets up your cohort folder automatically** — type your name, click the button.
 3. **Browse your level's modules** in the *My modules* page — each one renders inline with starter files listed alongside.
-4. **Book a check-in** with the engineer lead via the *Check-in helper* — it generates the Slack DM for you.
+4. **Book a check-in** with the engineer lead using the *Check-in helper* page to see what to bring, then reach out to the engineer lead directly.
 5. **Commit and push** the changes the app makes to your `cohort-2026Q3/<your-name>/` folder.
 
 When you're done, close the browser tab and stop the server with `Ctrl-C` in the terminal.
@@ -94,9 +94,9 @@ Full descriptions and exit criteria in [`pathway.md`](./pathway.md).
 
 Modules will evolve as we run cohorts. Changes go through PR, reviewed by the program owner.
 
-- **Program owner:** Craig Woodfinden
-- **Engineer lead (this cohort):** James Grant
-- **Standing technical advisor (Level 4-ish):** James Cook
+- **Program owner:** *fill in*
+- **Engineer lead (this cohort):** *fill in*
+- **Standing technical advisor (Level 4-ish):** *fill in*
 
 ---
 

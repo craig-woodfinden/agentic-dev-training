@@ -23,7 +23,7 @@ Rough numbers for a 6-engineer cohort:
 
 ## The 15-minute module check-in — the standard format
 
-Engineer books via Slack DM after they've completed a module. They bring the artefacts the module asks for. You run the check-in the same way every time.
+Engineer reaches out to you (chat, walk-up, calendar invite — whatever the team uses) after they've completed a module. They bring the artefacts the module asks for. You run the check-in the same way every time.
 
 | Time | What happens |
 |---|---|
@@ -114,7 +114,7 @@ Take check-ins as engineers book them. Try to respond to a booking request withi
 
 ### Friday (10 min)
 
-Post a short status in the cohort Slack channel:
+Post a short status in the team chat:
 
 ```
 Cohort status — week of <date>

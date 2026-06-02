@@ -252,13 +252,104 @@ def _try_recover_identity():
 
 # ---------- page config ----------
 st.set_page_config(
-    page_title="Agentic Dev Training",
-    page_icon="🧠",
+    page_title="Indiqator · Agentic Dev Training",
+    page_icon="https://indiqator.com.au/app/uploads/2025/07/cropped-Indiqator-favicon-512px-1-270x270.png",
     layout="wide",
 )
 
+# ---------- brand styling (Indiqator palette) ----------
+# Primary accent: #E6157D (gauge arc pink). Navy: #1E2761. Ink: #0E1733.
+# Theme colors come from .streamlit/config.toml; this block adds the polish.
+st.markdown(
+    """
+    <style>
+      :root {
+        --iq-pink: #E6157D;
+        --iq-pink-soft: #FDE7F2;
+        --iq-navy: #1E2761;
+        --iq-ink: #0E1733;
+        --iq-grey: #F4F6FA;
+      }
+      /* App title — pink underline accent, navy ink */
+      .stApp h1 {
+        color: var(--iq-ink) !important;
+        border-bottom: 4px solid var(--iq-pink);
+        display: inline-block;
+        padding-bottom: 6px;
+        margin-bottom: 16px;
+        line-height: 1.15;
+      }
+      /* Section headings — navy */
+      .stApp h2, .stApp h3 {
+        color: var(--iq-navy) !important;
+      }
+      /* Sidebar brand block */
+      [data-testid="stSidebar"] .indiqator-brand {
+        font-weight: 800;
+        font-size: 1.05rem;
+        letter-spacing: 0.12em;
+        color: var(--iq-ink);
+        padding: 2px 0 0 0;
+      }
+      [data-testid="stSidebar"] .indiqator-brand .dot {
+        color: var(--iq-pink);
+      }
+      [data-testid="stSidebar"] .indiqator-tag {
+        font-size: 0.78rem;
+        color: var(--iq-navy);
+        opacity: 0.75;
+        letter-spacing: 0.04em;
+        margin-bottom: 14px;
+      }
+      /* Primary button (uses theme primaryColor but adds hover polish) */
+      .stButton > button[kind="primary"] {
+        background: var(--iq-pink);
+        border: 1px solid var(--iq-pink);
+        color: #fff;
+        font-weight: 600;
+      }
+      .stButton > button[kind="primary"]:hover {
+        background: #C2126A;
+        border-color: #C2126A;
+      }
+      /* Metric numbers — pink accent */
+      [data-testid="stMetricValue"] {
+        color: var(--iq-pink);
+      }
+      /* Info / success / warning callouts — tone down to brand palette */
+      [data-testid="stAlertContainer"][kind="info"],
+      [data-testid="stAlert"] [data-baseweb="notification"][role="alert"]:has(svg[aria-label*="Info"]) {
+        background: var(--iq-pink-soft);
+        border-left: 4px solid var(--iq-pink);
+      }
+      /* Tabs / radio chip — focus state */
+      [data-baseweb="radio"] [aria-checked="true"] + div {
+        color: var(--iq-pink);
+      }
+      /* Dataframe header tint */
+      .stDataFrame thead tr th {
+        background: var(--iq-grey) !important;
+        color: var(--iq-ink) !important;
+      }
+      /* Module / form expanders */
+      [data-testid="stExpander"] > details > summary {
+        font-weight: 600;
+        color: var(--iq-navy);
+      }
+      /* Hide the streamlit default footer + main menu */
+      footer { visibility: hidden; }
+      #MainMenu { visibility: hidden; }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 # ---------- sidebar ----------
-st.sidebar.markdown("## 🧠 Agentic Dev Training")
+st.sidebar.markdown(
+    '<div class="indiqator-brand">INDIQ<span class="dot">/</span>TOR</div>'
+    '<div class="indiqator-tag">Agentic Dev Training</div>',
+    unsafe_allow_html=True,
+)
 _try_recover_identity()
 if st.session_state.onboarded:
     st.sidebar.success(
@@ -303,7 +394,7 @@ def page_welcome() -> None:
 1. **Take the placement quiz** in the sidebar. Five minutes. It tells you which level to start on.
 2. **The app sets up your cohort folder automatically** when you finish the quiz.
 3. **Work through your level's modules** in the *My modules* page. One per week is the default.
-4. **Book a check-in** with the engineer lead when you finish each module. The *Check-in helper* page generates the Slack DM for you.
+4. **Reach out to the engineer lead** to book a 15-minute check-in when you finish each module. The *Check-in helper* page tells you what to bring.
 5. **Move up a level** when all four exit criteria are met and the lead signs you off.
         """
     )
@@ -471,7 +562,7 @@ def page_my_modules() -> None:
     st.subheader("Ready for your check-in?")
     st.markdown(
         "Once you've worked through the *Do* section and run the *Self-check*, head to the "
-        "**Check-in helper** page in the sidebar — it generates the Slack DM to send the lead."
+        "**Check-in helper** page in the sidebar — it shows what to bring, then reach out to your engineer lead directly."
     )
 
 
@@ -492,36 +583,38 @@ def page_checkin_helper() -> None:
     codes = [module_code(m) for m in modules]
     labels = [f"{module_code(m)} — {module_title(m)}" for m in modules]
     selected_label = st.selectbox("Which module did you just finish?", labels, index=0)
-    selected_code = codes[labels.index(selected_label)]
+    selected_idx = labels.index(selected_label)
+    selected_code = codes[selected_idx]
+    selected_module = modules[selected_idx]
 
-    st.markdown("### Slack DM template")
-    st.markdown("Copy this and DM the engineer lead:")
-
-    summary = st.text_area(
-        "One-line summary of what you built (edit this to make it yours)",
-        value="Finished the exercise and the self-check — happy with what I built.",
-        height=80,
+    # Pull the module's check-in section out of the markdown so the engineer
+    # sees exactly what to bring without having to scroll back through the module.
+    module_text = selected_module.read_text()
+    checkin_match = re.search(
+        r"## Check-in with your engineer lead.*?(?=\n## |\Z)",
+        module_text, re.DOTALL,
+    )
+    selfcheck_match = re.search(
+        r"## Self-check before your check-in.*?(?=\n## |\Z)",
+        module_text, re.DOTALL,
     )
 
-    today = datetime.date.today()
-    slots = [
-        f"{(today + datetime.timedelta(days=1)).strftime('%a %d %b')} — morning",
-        f"{(today + datetime.timedelta(days=1)).strftime('%a %d %b')} — afternoon",
-        f"{(today + datetime.timedelta(days=2)).strftime('%a %d %b')} — morning",
-    ]
-    chosen_slots = st.multiselect("Suggested 15-minute slots", slots, default=slots)
-
-    dm = (
-        f"Hi! I've just finished **{selected_code}** "
-        f"({selected_label.split(' — ', 1)[1]}).\n\n"
-        f"{summary}\n\n"
-        f"Could we do a 15-minute check-in? I'm free:\n"
-        + "\n".join(f"- {s}" for s in chosen_slots)
-        + "\n\nThanks!"
+    st.info(
+        f"**Reach out to your engineer lead** to set up a 15-minute check-in for {selected_code}. "
+        "Use whatever channel your team uses — Teams chat, walk-up, calendar invite. "
+        "The lead will confirm a time."
     )
 
-    st.code(dm, language="markdown")
-    st.caption("Click the copy button at the top-right of the code block.")
+    if selfcheck_match:
+        with st.expander("Self-check — make sure you can answer these first", expanded=True):
+            # Strip the leading `## Self-check ...` heading line for cleaner display
+            body = re.sub(r"^## .+\n", "", selfcheck_match.group(0)).strip()
+            st.markdown(body)
+
+    if checkin_match:
+        with st.expander("What to bring to the check-in", expanded=True):
+            body = re.sub(r"^## .+\n", "", checkin_match.group(0)).strip()
+            st.markdown(body)
 
     st.markdown("---")
     st.markdown("**The check-in itself takes 15 minutes:**")

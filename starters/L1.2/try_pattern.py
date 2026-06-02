@@ -2,7 +2,7 @@
 L1.2 starter — run the same task through five different prompt patterns.
 
 Edit INPUT below to be a real piece of messy text from your work
-(Slack thread, meeting notes, customer email — anonymise if needed).
+(Teams chat, meeting notes, customer email — anonymise if needed).
 
 Each PATTERN is a different prompt design. Run them all, compare the
 outputs. Save your winner to ../../cohort-2026Q3/<your-name>/L1.2-prompt-v1.txt
@@ -20,7 +20,7 @@ MODEL = "claude-haiku-4-5"
 INPUT = """
 PASTE YOUR MESSY TEXT HERE.
 
-A long Slack thread, a meeting note, a customer email, a JIRA comment.
+A long Teams chat, a meeting note, a customer email, a JIRA comment.
 Anonymise it if needed.
 """
 

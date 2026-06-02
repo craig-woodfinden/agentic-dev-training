@@ -22,5 +22,5 @@ For each module you complete, drop in:
 
 1. After joining the cohort (`cp -r _template <your-name>`), open `status.md` and fill in your starting level, quiz score, and start date.
 2. As you work through each module, save your artefacts here and write a one-screen `LX.Y-notes.md`.
-3. Book a check-in with the engineer lead via Slack DM when you're ready.
+3. Reach out to the engineer lead to book a check-in when you're ready.
 4. At the check-in, the lead signs you off in `status.md`. Commit and push.

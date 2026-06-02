@@ -9,7 +9,7 @@ Take the 5-minute quiz. Land on a level. Work through one module a week at your 
 1. Take the placement quiz in [`placement-quiz.md`](./placement-quiz.md) (or run `python score_quiz.py`). It tells you which level to start on.
 2. Block ~75 minutes on your own calendar each week for module work. Plus a 15-minute check-in with the engineer lead. Total ~90 min/week — but spread however suits you.
 3. Work through your level's four modules at your own pace (one per week is the default). Each module is self-contained and runnable from the [`starters/`](./starters/) folder.
-4. After each module, run the self-check, book a 15-minute Slack DM with the lead, walk them through what you built. They sign you off.
+4. After each module, run the self-check, book a 15-minute check-in with the lead, walk them through what you built. They sign you off.
 5. Your capstone is real project work that uses the level's skills. Demo it to the lead (and 1–2 others for L2/L3). Move up when the four exit criteria are met.
 
 ---
@@ -66,7 +66,7 @@ Ship one real PR end-to-end using Claude Code. Small but real. Then write a 600-
 
 ### Capstone
 
-The next small internal tool your team needs — built with at least one custom tool/function call and a 10-case eval suite. The capstone is real work, not a side project. Ship it where teammates will actually use it (internal CLI, Slack bot, or skill).
+The next small internal tool your team needs — built with at least one custom tool/function call and a 10-case eval suite. The capstone is real work, not a side project. Ship it where teammates will actually use it (internal CLI, Teams bot, or skill).
 
 - **You'll demo:** 30–45 min, with the engineer lead and 1–2 other cohort engineers. Show the working tool, the eval pass rate, and your per-call cost estimate.
 - **You'll hand in:** Working tool, eval CSV/JSONL, runner script, README with cost-per-call.
@@ -151,16 +151,16 @@ The rhythm per engineer:
 
 1. **Block ~75 minutes during the week** for the module itself. This is protected time on your own calendar, not a group session.
 2. **Run through the self-check** at the end of the module. If you can't answer the questions cleanly, re-read the relevant section.
-3. **Book a 15-minute check-in** with the engineer lead via Slack DM.
+3. **Book a 15-minute check-in** with the engineer lead.
 4. **Walk the lead through what you built** for 5–7 minutes. They ask 2–3 probe questions and sign you off.
 
 Total time per engineer per module: ~90 minutes (75 of work, 15 of check-in). One module a week is the default pace.
 
 ### Two — The engineer lead
 
-One named lead runs the cohort. Their job is to take 15-minute module check-ins, run capstone demos, and answer questions in the cohort Slack channel. They do **not** lecture, run a class, or grade in detail.
+One named lead runs the cohort. Their job is to take 15-minute module check-ins, run capstone demos, and answer questions in the team chat. They do **not** lecture, run a class, or grade in detail.
 
-Time commitment for the lead: ~2.5–3 hours per week (six engineers × one check-in × 15 min, plus capstones and Slack questions). The full playbook is in [`cohort-2026Q3/engineer-lead-playbook.md`](./cohort-2026Q3/engineer-lead-playbook.md).
+Time commitment for the lead: ~2.5–3 hours per week (six engineers × one check-in × 15 min, plus capstones and ad-hoc questions). The full playbook is in [`cohort-2026Q3/engineer-lead-playbook.md`](./cohort-2026Q3/engineer-lead-playbook.md).
 
 For a small team, the lead is usually your most senior engineer until someone else grows into the role.
 
