@@ -6,17 +6,42 @@ The training pathway for our engineering team — covering everything from your 
 
 ---
 
-## How to use this repo
+## Quickstart — run the local app
 
-1. **Take the placement quiz.** Run `python score_quiz.py` and answer 10 questions (~5 minutes). It tells you which level to start on. The quiz is also in [`placement-quiz.md`](./placement-quiz.md) if you'd rather read it.
+The fastest path for an engineer joining the cohort:
 
-2. **Read the pathway.** Open [`pathway.md`](./pathway.md). It's the whole program — quiz, the four levels, capstones, and how the self-paced model works.
+```bash
+git clone <this-repo>
+cd agentic-dev-training
 
-3. **Each week, open that week's module.** Module files live in [`modules/`](./modules/). Each is one page, runnable in ~75 minutes, with the starter code in [`starters/`](./starters/).
+# install dependencies (one time)
+python -m venv .venv
+source .venv/bin/activate          # on Windows: .venv\Scripts\activate
+pip install -r requirements.txt
 
-4. **Run the self-check, then book a 15-minute check-in with the engineer lead** (Slack DM). The lead's playbook is in [`cohort-2026Q3/engineer-lead-playbook.md`](./cohort-2026Q3/engineer-lead-playbook.md).
+# launch the local app
+streamlit run app.py
+```
 
-5. **Commit your work to your cohort folder.** Each engineer has a folder under `cohort-2026Q3/<your-name>/`. Notes, prompts, capstones, sign-off log — push them as you go.
+Streamlit will print a URL (usually `http://localhost:8501`) and open it in your browser. From there:
+
+1. **Take the placement quiz** — 10 questions, ~5 min.
+2. **The app sets up your cohort folder automatically** — type your name, click the button.
+3. **Browse your level's modules** in the *My modules* page — each one renders inline with starter files listed alongside.
+4. **Book a check-in** with the engineer lead via the *Check-in helper* — it generates the Slack DM for you.
+5. **Commit and push** the changes the app makes to your `cohort-2026Q3/<your-name>/` folder.
+
+When you're done, close the browser tab and stop the server with `Ctrl-C` in the terminal.
+
+### Don't want to use the app?
+
+You can do everything from the command line instead:
+
+```bash
+python score_quiz.py     # interactive CLI version — same outcome
+```
+
+And then open the module markdown files directly from [`modules/`](./modules/) in your editor.
 
 ---
 
@@ -25,50 +50,24 @@ The training pathway for our engineering team — covering everything from your 
 ```
 .
 ├── README.md                ← this file
+├── app.py                   ← local Streamlit frontend (recommended)
+├── score_quiz.py            ← CLI quiz + auto-onboard (fallback)
 ├── pathway.md               ← the whole program in markdown
-├── placement-quiz.md        ← the 10-question quiz
-├── score_quiz.py            ← interactive quiz scorer
-├── requirements.txt         ← Python deps used across modules
+├── placement-quiz.md        ← the 10-question quiz, read-only
+├── requirements.txt         ← Python deps
 ├── modules/                 ← the 12 module session-in-a-box files
 ├── starters/                ← runnable starter code, one folder per module
 └── cohort-2026Q3/           ← active cohort
     ├── README.md            ← cohort tracker
     ├── engineer-lead-playbook.md   ← the lead's operating manual
-    └── _template/           ← copy this to <your-name>/ to join
-```
-
----
-
-## Quickstart for engineers
-
-```bash
-git clone <this-repo>
-cd agentic-dev-training
-
-# set your API key
-export ANTHROPIC_API_KEY="sk-ant-..."
-
-# create a virtual env and install deps
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-
-# take the placement quiz
-python score_quiz.py
-
-# create your cohort folder
-cp -r cohort-2026Q3/_template cohort-2026Q3/<your-name>
-
-# read the pathway and your level's first module
-open pathway.md
-open modules/L1.1-mental-model-of-llms.md   # whichever module you're starting on
+    └── _template/           ← copied to <your-name>/ when you onboard
 ```
 
 ---
 
 ## Quickstart for the engineer lead
 
-If you've been named the lead for this cohort, **read [`cohort-2026Q3/engineer-lead-playbook.md`](./cohort-2026Q3/engineer-lead-playbook.md) before the first check-in.** It covers:
+If you've been named the lead for this cohort, **read [`cohort-2026Q3/engineer-lead-playbook.md`](./cohort-2026Q3/engineer-lead-playbook.md) before the first check-in.** Or open the app and select *Engineer lead playbook* in the sidebar — same content, rendered. It covers:
 
 - The 15-minute check-in format and sign-off bar
 - How to run each level's capstone demo (15 min for L1, up to 60 min for L3)
