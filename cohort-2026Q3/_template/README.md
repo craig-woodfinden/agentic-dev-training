@@ -4,7 +4,7 @@ Your personal folder for this cohort. Everything you produce while working throu
 
 ## Files in this template
 
-- **`status.md`** -- your check-in log. The engineer lead updates this when they sign off a module. The most important file in this folder.
+- **`status.md`** -- your progress log. Update it yourself as you complete each module.
 - `L1.1-notes.md` -- example notes template (copy it for every module).
 - `L1.3-capstone-retro.md` -- L1 capstone retro template (600 words).
 - `L2-capstone-readme.md` -- L2 capstone README template.
@@ -22,5 +22,5 @@ For each module you complete, drop in:
 
 1. After joining the cohort (`cp -r _template <your-name>`), open `status.md` and fill in your starting level, quiz score, and start date.
 2. As you work through each module, save your artefacts here and write a one-screen `LX.Y-notes.md`.
-3. Reach out to the engineer lead to book a check-in when you're ready.
-4. At the check-in, the lead signs you off in `status.md`. Commit and push.
+3. When you've finished a module's self-check, submit your completion in the app (the "My modules" page). The app records the date and your artefact link.
+4. The next module unlocks automatically once you submit.

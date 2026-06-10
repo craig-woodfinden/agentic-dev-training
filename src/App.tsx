@@ -5,9 +5,7 @@ import { EMPTY_USER } from "./types.ts";
 import Welcome from "./pages/Welcome.tsx";
 import Quiz from "./pages/Quiz.tsx";
 import MyModules from "./pages/MyModules.tsx";
-import CheckinHelper from "./pages/CheckinHelper.tsx";
 import CohortStatus from "./pages/CohortStatus.tsx";
-import LeadPlaybook from "./pages/LeadPlaybook.tsx";
 
 const STORAGE_KEY = "iq-agentic-user";
 
@@ -74,14 +72,8 @@ export default function App() {
           <NavLink className={({ isActive }) => "nav-link" + (isActive ? " active" : "")} to="/modules">
             My modules
           </NavLink>
-          <NavLink className={({ isActive }) => "nav-link" + (isActive ? " active" : "")} to="/checkin">
-            Check-in helper
-          </NavLink>
           <NavLink className={({ isActive }) => "nav-link" + (isActive ? " active" : "")} to="/cohort">
-            Cohort status
-          </NavLink>
-          <NavLink className={({ isActive }) => "nav-link" + (isActive ? " active" : "")} to="/playbook">
-            Engineer lead playbook
+            My status
           </NavLink>
 
           <div className="sidebar-footer">
@@ -94,10 +86,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Welcome user={user} />} />
             <Route path="/quiz" element={<Quiz user={user} updateUser={updateUser} />} />
-            <Route path="/modules" element={<MyModules user={user} />} />
-            <Route path="/checkin" element={<CheckinHelper user={user} />} />
-            <Route path="/cohort" element={<CohortStatus />} />
-            <Route path="/playbook" element={<LeadPlaybook />} />
+            <Route path="/modules" element={<MyModules user={user} updateUser={updateUser} />} />
+            <Route path="/cohort" element={<CohortStatus user={user} />} />
           </Routes>
         </main>
       </div>

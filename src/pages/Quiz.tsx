@@ -67,15 +67,16 @@ export default function Quiz({ user, updateUser }: Props) {
   const [onboarding, setOnboarding] = useState(false);
   const [onboardMsg, setOnboardMsg] = useState<{ ok: boolean; text: string } | null>(null);
   const [retaking, setRetaking] = useState(false);
+  const [prevLevelShort, setPrevLevelShort] = useState<string | null>(null);
   const navigate = useNavigate();
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (answers.some((a) => a === null)) {
       alert("Please answer all 10 questions.");
       return;
     }
-    const score = answers.reduce((s, a) => s + (a ?? 0), 0);
+    const score = answers.reduce<number>((s, a) => s + (a ?? 0), 0);
     const level = levelFor(score);
     updateUser({
       score,
@@ -83,6 +84,18 @@ export default function Quiz({ user, updateUser }: Props) {
       levelFull: level.full,
       firstModule: level.firstModule,
     });
+    if (user.onboarded && user.name) {
+      try {
+        await fetch("/api/onboard", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name: user.name, score, levelShort: level.short, firstModule: level.firstModule }),
+        });
+      } catch {
+        // silent — local state is updated regardless
+      }
+    }
+    setRetaking(false);
     setSubmitted(true);
   }
 
@@ -116,8 +129,8 @@ export default function Quiz({ user, updateUser }: Props) {
     }
   }
 
-  // Show results if submitted or if user already has a score
-  const showResults = (submitted || (user.score !== null && !retaking)) && !retaking;
+  // Show results if submitted or if user already has a score and isn't mid-retake
+  const showResults = submitted || (user.score !== null && !retaking);
 
   if (showResults) {
     const score = user.score!;
@@ -126,13 +139,21 @@ export default function Quiz({ user, updateUser }: Props) {
     return (
       <>
         <h1>Placement quiz</h1>
+        {submitted && prevLevelShort && (
+          <div className={`alert ${prevLevelShort !== levelShort ? "alert-success" : "alert-info"}`} style={{ marginBottom: "16px" }}>
+            {prevLevelShort !== levelShort
+              ? `Level updated: ${prevLevelShort} → ${levelShort}`
+              : "Level confirmed — same placement as before."}
+          </div>
+        )}
+
         <div className="alert alert-success" style={{ fontWeight: 600, fontSize: "1rem" }}>
           Total score: {score} / 30
         </div>
         <h2>{levelFull}</h2>
         <p>{levelFor(score).blurb}</p>
 
-        <button className="btn btn-secondary" style={{ marginBottom: "24px" }} onClick={() => { setRetaking(true); setSubmitted(false); setAnswers(Array(QUESTIONS.length).fill(null)); }}>
+        <button className="btn btn-secondary" style={{ marginBottom: "24px" }} onClick={() => { setPrevLevelShort(levelShort); setRetaking(true); setSubmitted(false); setAnswers(Array(QUESTIONS.length).fill(null)); }}>
           Retake the quiz
         </button>
 

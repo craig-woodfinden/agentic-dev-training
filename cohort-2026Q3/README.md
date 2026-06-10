@@ -26,6 +26,7 @@ Run `python score_quiz.py` to find your starting level, then update the table be
 
 | Engineer | Quiz score | Starting level | Current module | Last check-in | Capstone status |
 |---|---|---|---|---|---|
+| craig-w | 4/30 | L1 | L1.3 | -- | not started |
 | *name* | | | | | |
 | *name* | | | | | |
 | *name* | | | | | |

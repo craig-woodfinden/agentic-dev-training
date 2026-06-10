@@ -163,6 +163,84 @@ app.post("/api/onboard", (req, res) => {
   });
 });
 
+// POST /api/complete-module -- record a completed module and unlock the next
+app.post("/api/complete-module", (req, res) => {
+  const { name, moduleCode, artifact } = req.body as {
+    name: string;
+    moduleCode: string;
+    artifact: string;
+  };
+
+  if (!name || !moduleCode) {
+    res.status(400).json({ ok: false, message: "Missing name or moduleCode." });
+    return;
+  }
+
+  if (moduleCode !== "L1.1") {
+    const isGitHub =
+      typeof artifact === "string" &&
+      (artifact.startsWith("https://github.com/") || artifact.startsWith("https://gist.github.com/"));
+    if (!isGitHub) {
+      res.status(400).json({ ok: false, message: "Artifact must be a GitHub URL (https://github.com/… or https://gist.github.com/…)." });
+      return;
+    }
+  } else {
+    if (!artifact || artifact.trim().length < 20) {
+      res.status(400).json({ ok: false, message: "Describe the hallucination in at least 20 characters." });
+      return;
+    }
+  }
+
+  const engineerDir = path.join(COHORT_DIR, name);
+  if (!fs.existsSync(engineerDir)) {
+    res.status(404).json({ ok: false, message: "Engineer folder not found. Complete the placement quiz first." });
+    return;
+  }
+
+  const today = new Date().toISOString().split("T")[0];
+
+  // Append completion record to status.md
+  const statusPath = path.join(engineerDir, "status.md");
+  if (fs.existsSync(statusPath)) {
+    let status = fs.readFileSync(statusPath, "utf-8");
+    const completionLine = `- **${moduleCode}** completed ${today} — ${artifact}`;
+    if (status.includes("## Completed modules")) {
+      status = status.replace("## Completed modules\n", `## Completed modules\n${completionLine}\n`);
+    } else {
+      status += `\n\n## Completed modules\n${completionLine}\n`;
+    }
+    fs.writeFileSync(statusPath, status);
+  }
+
+  // Advance current module in cohort README
+  const MODULE_ORDER = ["L1.1","L1.2","L1.3","L1.4","L2.1","L2.2","L2.3","L2.4","L3.1","L3.2","L3.3","L3.4"];
+  const currentIdx = MODULE_ORDER.indexOf(moduleCode);
+  const nextModule = currentIdx >= 0 && currentIdx < MODULE_ORDER.length - 1
+    ? MODULE_ORDER[currentIdx + 1]
+    : "complete";
+
+  const readmePath = path.join(COHORT_DIR, "README.md");
+  if (fs.existsSync(readmePath)) {
+    let readme = fs.readFileSync(readmePath, "utf-8");
+    const escaped = name.replace(/[-]/g, "\\$&");
+    const rowRe = new RegExp(
+      `^\\| ${escaped} \\|([^|]+)\\|([^|]+)\\|[^|]+\\|([^|]+)\\|([^|]+)\\|\\s*$`,
+      "m"
+    );
+    readme = readme.replace(rowRe, (_m, c1, c2, c4, c5) =>
+      `| ${name} |${c1}|${c2}| ${nextModule} |${c4}|${c5}|`
+    );
+    fs.writeFileSync(readmePath, readme);
+  }
+
+  res.json({
+    ok: true,
+    message: nextModule === "complete"
+      ? `${moduleCode} complete. You've finished all modules -- well done.`
+      : `${moduleCode} complete. Next up: ${nextModule}.`,
+  });
+});
+
 // POST /api/progress -- update current module for an engineer
 app.post("/api/progress", (req, res) => {
   const { name, moduleCode } = req.body as { name: string; moduleCode: string };

@@ -1,15 +1,6 @@
-import { useEffect, useState } from "react";
-import type { UserState, Engineer } from "../types.ts";
+import type { UserState } from "../types.ts";
 
 export default function Welcome({ user }: { user: UserState }) {
-  const [engineers, setEngineers] = useState<Engineer[]>([]);
-
-  useEffect(() => {
-    fetch("/api/cohort")
-      .then((r) => r.json())
-      .then((data: { engineers: Engineer[] }) => setEngineers(data.engineers))
-      .catch(() => {});
-  }, []);
 
   return (
     <>
@@ -44,36 +35,6 @@ export default function Welcome({ user }: { user: UserState }) {
         <li><strong>Reach out to the engineer lead</strong> to book a 15-minute check-in when you finish each module.</li>
         <li><strong>Move up a level</strong> when all four exit criteria are met and the lead signs you off.</li>
       </ol>
-
-      <hr />
-
-      <h2>Where the cohort is right now</h2>
-      {engineers.length === 0 ? (
-        <div className="alert alert-info">
-          No engineers in the cohort yet. Be the first -- take the quiz.
-        </div>
-      ) : (
-        <table>
-          <thead>
-            <tr>
-              <th>Engineer</th>
-              <th>Level</th>
-              <th>Score</th>
-              <th>Started</th>
-            </tr>
-          </thead>
-          <tbody>
-            {engineers.map((e) => (
-              <tr key={e.name}>
-                <td>{e.name}</td>
-                <td>{e.level}</td>
-                <td>{e.score}</td>
-                <td>{e.started}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
 
       <hr />
 
